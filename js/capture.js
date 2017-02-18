@@ -6,6 +6,7 @@ $(function() {
     "-moz-transform: scale(-1, 1); \
      -webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); \
      transform: scale(-1, 1); filter: FlipH;";
+
   // Get access to the camera!
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
@@ -17,7 +18,7 @@ $(function() {
 
   // Elements for taking the snapshot
   var context = canvas.getContext("2d");
-  context.translate(width, 0);
+  context.translate(video.videoWidth, 0);
   context.scale(-1, 1);
 
   var video = document.getElementById("video");
