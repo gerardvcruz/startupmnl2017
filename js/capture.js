@@ -18,8 +18,6 @@ $(function() {
 
   // Elements for taking the snapshot
   var context = canvas.getContext("2d");
-  context.translate(video.videoWidth, 0);
-  context.scale(-1, 1);
 
   var video = document.getElementById("video");
   var pictures = [];
@@ -28,6 +26,14 @@ $(function() {
   video.addEventListener("click", function() {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
+    // Also mirror the canvas so it is the exact copy of the pic
+    canvas.style.cssText =
+      "-moz-transform: scale(-1, 1); \
+       -webkit-transform: scale(-1, 1); \
+       -o-transform: scale(-1, 1); \
+       transform: scale(-1, 1); \
+       filter: FlipH;"
+
     context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
     pictures.push(canvas.toDataURL('image/png'));
   });
