@@ -17,6 +17,6 @@ $(function() {
 
   // Trigger photo take
   video.addEventListener("click", function() {
-    context.drawImage(video, 0, 0, 640, 480);
+    context.drawImage(video, 0, 0, 720, 1280);
   });
 });
