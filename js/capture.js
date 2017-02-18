@@ -17,7 +17,7 @@ $(function() {
 
   // Elements for taking the snapshot
   var context = canvas.getContext("2d");
-  canvasContext.scale(-1, 1);
+  context.scale(-1, 1);
   var video = document.getElementById("video");
   var pictures = [];
 
