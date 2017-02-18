@@ -1,17 +1,17 @@
 <!DOCTYPE html>
   <head>
+    <link rel="stylesheet" href="css/klasify.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/capture.js"></script>
   </head>
 
   <body>
-    <!--
-      Ideally these elements aren't created until it's confirmed that the
-      client supports video/camera, but for the sake of illustrating the
-      elements involved, they are created with markup (not JavaScript)
-    -->
-    <video id="video" width="640" height="480" autoplay></video>
-    <button id="snap">Snap Photo</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
+    <div class="container">
+      <div class="col-12">
+        <label>Tap to take a pic</label>
+        <video id="video" width="720" height="1280" autoplay></video>
+        <canvas id="canvas" width="720" height="1280"></canvas>
+      </div>
+    </div>
   </body>
 </html>
