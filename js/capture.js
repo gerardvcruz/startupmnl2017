@@ -1,5 +1,6 @@
 $(function() {
   var video = document.getElementById("video");
+  var canvas = document.getElementById("canvas");
 
   // Get access to the camera!
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -11,12 +12,13 @@ $(function() {
   }
 
   // Elements for taking the snapshot
-  var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
   var video = document.getElementById("video");
 
   // Trigger photo take
   video.addEventListener("click", function() {
-    context.drawImage(video, 0, 0, 720, 1280);
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
   });
 });
